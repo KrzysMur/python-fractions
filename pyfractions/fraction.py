@@ -1,3 +1,5 @@
+from .utilities import largest_common_factor
+
 
 class Fraction:
     def __init__(self, numerator: int, denominator: int):
@@ -9,18 +11,21 @@ class Fraction:
         self.numerator //= lcf
         self.denominator //= lcf
 
+    def get_reciprocal(self):
+        return Fraction(self.denominator, self.numerator)
+
     def multiply_numerator_and_denominator(self, x: int):
         self.numerator *= x
         self.denominator *= x
 
+    def display(self):
+        return f"{self.numerator}/{self.denominator}"
 
 
-def largest_common_factor(a: int, b: int):
-    if a < b:
-        a, b = b, a
-    while b != 0:
-        a, b = b, a % b
-    return a
+def common_denominators(fraction1: Fraction, fraction2: Fraction):
+    x = fraction1.denominator
+    fraction1.multiply_numerator_and_denominator(fraction2.denominator)
+    fraction2.multiply_numerator_and_denominator(x)
 
 
 
