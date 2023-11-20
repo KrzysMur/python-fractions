@@ -6,6 +6,7 @@ Simple Python library to work with fractions.
 
     git clone https://github.com/KrzysMur/python-fractions.git
     pip install --upgrade build
+    cd python-fractions
     python -m build
     python -m pip install .
 
@@ -18,11 +19,14 @@ Simple Python library to work with fractions.
 ## How to use?
     Fraction(numerator, denominator)
 
+    from pyfractions.operations import *
+This imports Fraction class and operations listed below
+
 Module pyfractions.operations contains following functions:
-    add_fraction(Fraction, Fraction)
-    subtract_fraction(Fraction, Fraction)
-    multiply_fraction(Fraction, Fraction)
-    divide_fraction(Fraction, Fraction)
+- add_fraction(Fraction, Fraction)
+- subtract_fraction(Fraction, Fraction)
+- multiply_fraction(Fraction, Fraction)
+- divide_fraction(Fraction, Fraction)
 
 To display Fraction object in readable format use
     fraction.display()
