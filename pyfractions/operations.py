@@ -15,7 +15,10 @@ def multiply_fractions(fraction1: Fraction, fraction2: Fraction):
 
 
 def divide_fractions(fraction1: Fraction, fraction2: Fraction):
+    if fraction2.numerator == 0:
+        raise ZeroDivisionError
     return multiply_fractions(fraction1, fraction2.get_reciprocal())
+
 
 
 

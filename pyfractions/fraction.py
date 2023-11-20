@@ -1,9 +1,12 @@
+
 from .utilities import largest_common_factor
 
 
 class Fraction:
-    def __init__(self, numerator: int, denominator: int):
+    def __init__(self, numerator: int, denominator: int = 1):
         self.numerator = numerator
+        if denominator == 0:
+            raise ZeroDivisionError
         self.denominator = denominator
 
     def reduce(self):
@@ -21,11 +24,11 @@ class Fraction:
     def display(self):
         return f"{self.numerator}/{self.denominator}"
 
+    def get_float(self):
+        return self.numerator / self.denominator
+
 
 def common_denominators(fraction1: Fraction, fraction2: Fraction):
     x = fraction1.denominator
     fraction1.multiply_numerator_and_denominator(fraction2.denominator)
     fraction2.multiply_numerator_and_denominator(x)
-
-
-
